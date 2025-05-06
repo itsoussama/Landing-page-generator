@@ -94,7 +94,7 @@ const RegularTemplate = ({
   return (
     <div className="template-container regular bg-color">
       {/* HEADER SECTION */}
-      <div data-section={1}>
+      <div className="section">
         <div className="header-section">
           <h1 className="main-title">{mainHeader}</h1>
           <div className="product-image-container">
@@ -124,7 +124,7 @@ const RegularTemplate = ({
       </div>
 
       {/* DEMO SECTION */}
-      <div data-section={2}>
+      <div className="section">
         <div className="demo-section">
           <div className="product-image-container">
             <span className="image-label">Image 2</span>
@@ -151,7 +151,7 @@ const RegularTemplate = ({
       </div>
 
       {/* FEATURES SECTION */}
-      <div className="features-section" data-section={3}>
+      <div className="features-section section">
         <div className="features-grid">
           {displayFeatures.map((feature, index) => (
             <div className="feature-item" key={index}>
@@ -179,7 +179,7 @@ const RegularTemplate = ({
       </div>
       {/* HIGHLIGHTS SECTIONS */}
       {displayHighlights.map((highlight, index) => (
-        <div className="highlight-section" key={index} data-section={index + 4}>
+        <div className="highlight-section section" key={index}>
           <div className="highlight-content">
             <h2 className="highlight-title">{highlight.title}</h2>
             <p className="highlight-subtitle">{highlight.subtitle}</p>
@@ -209,28 +209,30 @@ const RegularTemplate = ({
           </div>
         </div>
       ))}
-      <div className="filler"></div>
       {/* DIMENSIONS SECTION */}
-      <div className="dimensions-section">
-        <div className="product-image-container">
-          <span className="image-label">Image 6</span>
-          <img
-            className="dimensions-image"
-            data-image-index={5}
-            src={images[5]}
-            alt="Product Dimensions"
-            data-mediatype="image"
-          />
-          <input
-            id="product-image-input-6"
-            type="file"
-            style={{ display: "none" }}
-            accept="image/png, image/jpeg, image/gif"
-            onChange={(e) => handleImageUpload(5, e)}
-          />
-          <label htmlFor="product-image-input-6" className="edit-image-btn">
-            <i className="fas fa-edit"></i> Modifier
-          </label>
+      <div className="section">
+        <div className="filler"></div>
+        <div className="dimensions-section">
+          <div className="product-image-container">
+            <span className="image-label">Image 6</span>
+            <img
+              className="dimensions-image"
+              data-image-index={5}
+              src={images[5]}
+              alt="Product Dimensions"
+              data-mediatype="image"
+            />
+            <input
+              id="product-image-input-6"
+              type="file"
+              style={{ display: "none" }}
+              accept="image/png, image/jpeg, image/gif"
+              onChange={(e) => handleImageUpload(5, e)}
+            />
+            <label htmlFor="product-image-input-6" className="edit-image-btn">
+              <i className="fas fa-edit"></i> Modifier
+            </label>
+          </div>
         </div>
       </div>
     </div>
